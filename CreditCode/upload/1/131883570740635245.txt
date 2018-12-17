@@ -1,0 +1,7 @@
+{"id":1,"url":"http://smartmap.gotoningbo.com/tiles/[z]/[x]/[y].png1","name":"hhhhhhhhh","maxlevel":1,"minlevel":1,"candelete":1,"isdelete":0}
+
+{"id":3,"url":"http://smartmap.gotoningbo.com/tiles/[z]/[x]/[y].png1","name":"hhhhhhhhh","candelete":1,"isdelete":0}
+
+{"id":2,"url":"http://smartmap.gotoningbo.com/tiles/[z]/[x]/[y].png1","longitude":1.23,"latitude":1.34,"name":"hhhhhhhhh","candelete":1,"isdelete":1}
+
+

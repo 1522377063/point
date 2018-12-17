@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://impl.webservice.platform.hotent.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ProcessServiceImplService" targetNamespace="http://impl.webservice.platform.hotent.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://impl.webservice.platform.hotent.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="addSignUsers" type="tns:addSignUsers" />
+      <xs:element name="addSignUsersResponse" type="tns:addSignUsersResponse" />
+      <xs:element name="canSelectedUser" type="tns:canSelectedUser" />
+      <xs:element name="canSelectedUserResponse" type="tns:canSelectedUserResponse" />
+      <xs:element name="doNext" type="tns:doNext" />
+      <xs:element name="doNextResponse" type="tns:doNextResponse" />
+      <xs:element name="endProcessByTaskId" type="tns:endProcessByTaskId" />
+      <xs:element name="endProcessByTaskIdResponse" type="tns:endProcessByTaskIdResponse" />
+      <xs:element name="getApprovalItems" type="tns:getApprovalItems" />
+      <xs:element name="getApprovalItemsResponse" type="tns:getApprovalItemsResponse" />
+      <xs:element name="getBpmDefinition" type="tns:getBpmDefinition" />
+      <xs:element name="getBpmDefinitionResponse" type="tns:getBpmDefinitionResponse" />
+      <xs:element name="getByBusinessKey" type="tns:getByBusinessKey" />
+      <xs:element name="getByBusinessKeyResponse" type="tns:getByBusinessKeyResponse" />
+      <xs:element name="getDestNodeHandleUsers" type="tns:getDestNodeHandleUsers" />
+      <xs:element name="getDestNodeHandleUsersResponse" type="tns:getDestNodeHandleUsersResponse" />
+      <xs:element name="getFinishTask" type="tns:getFinishTask" />
+      <xs:element name="getFinishTaskDetailUrl" type="tns:getFinishTaskDetailUrl" />
+      <xs:element name="getFinishTaskDetailUrlResponse" type="tns:getFinishTaskDetailUrlResponse" />
+      <xs:element name="getFinishTaskResponse" type="tns:getFinishTaskResponse" />
+      <xs:element name="getMyProcessRunByXml" type="tns:getMyProcessRunByXml" />
+      <xs:element name="getMyProcessRunByXmlResponse" type="tns:getMyProcessRunByXmlResponse" />
+      <xs:element name="getNextFlowNodes" type="tns:getNextFlowNodes" />
+      <xs:element name="getNextFlowNodesResponse" type="tns:getNextFlowNodesResponse" />
+      <xs:element name="getProcessOpinionByActInstId" type="tns:getProcessOpinionByActInstId" />
+      <xs:element name="getProcessOpinionByActInstIdResponse" type="tns:getProcessOpinionByActInstIdResponse" />
+      <xs:element name="getProcessOpinionByRunId" type="tns:getProcessOpinionByRunId" />
+      <xs:element name="getProcessOpinionByRunIdResponse" type="tns:getProcessOpinionByRunIdResponse" />
+      <xs:element name="getProcessRun" type="tns:getProcessRun" />
+      <xs:element name="getProcessRunByRunId" type="tns:getProcessRunByRunId" />
+      <xs:element name="getProcessRunByRunIdResponse" type="tns:getProcessRunByRunIdResponse" />
+      <xs:element name="getProcessRunByTaskId" type="tns:getProcessRunByTaskId" />
+      <xs:element name="getProcessRunByTaskIdResponse" type="tns:getProcessRunByTaskIdResponse" />
+      <xs:element name="getProcessRunResponse" type="tns:getProcessRunResponse" />
+      <xs:element name="getStatusByRunidNodeId" type="tns:getStatusByRunidNodeId" />
+      <xs:element name="getStatusByRunidNodeIdResponse" type="tns:getStatusByRunidNodeIdResponse" />
+      <xs:element name="getTaskByTaskId" type="tns:getTaskByTaskId" />
+      <xs:element name="getTaskByTaskIdResponse" type="tns:getTaskByTaskIdResponse" />
+      <xs:element name="getTaskFormUrl" type="tns:getTaskFormUrl" />
+      <xs:element name="getTaskFormUrlResponse" type="tns:getTaskFormUrlResponse" />
+      <xs:element name="getTaskNameByTaskId" type="tns:getTaskNameByTaskId" />
+      <xs:element name="getTaskNameByTaskIdResponse" type="tns:getTaskNameByTaskIdResponse" />
+      <xs:element name="getTaskNode" type="tns:getTaskNode" />
+      <xs:element name="getTaskNodeResponse" type="tns:getTaskNodeResponse" />
+      <xs:element name="getTaskOutNodes" type="tns:getTaskOutNodes" />
+      <xs:element name="getTaskOutNodesResponse" type="tns:getTaskOutNodesResponse" />
+      <xs:element name="getTasksByAccount" type="tns:getTasksByAccount" />
+      <xs:element name="getTasksByAccountResponse" type="tns:getTasksByAccountResponse" />
+      <xs:element name="getTasksByRunId" type="tns:getTasksByRunId" />
+      <xs:element name="getTasksByRunIdResponse" type="tns:getTasksByRunIdResponse" />
+      <xs:element name="getVariablesByRunId" type="tns:getVariablesByRunId" />
+      <xs:element name="getVariablesByRunIdResponse" type="tns:getVariablesByRunIdResponse" />
+      <xs:element name="getVariablesByTaskId" type="tns:getVariablesByTaskId" />
+      <xs:element name="getVariablesByTaskIdResponse" type="tns:getVariablesByTaskIdResponse" />
+      <xs:element name="isAllowAddSign" type="tns:isAllowAddSign" />
+      <xs:element name="isAllowAddSignResponse" type="tns:isAllowAddSignResponse" />
+      <xs:element name="isAllowBack" type="tns:isAllowBack" />
+      <xs:element name="isAllowBackResponse" type="tns:isAllowBackResponse" />
+      <xs:element name="isSelectPath" type="tns:isSelectPath" />
+      <xs:element name="isSelectPathResponse" type="tns:isSelectPathResponse" />
+      <xs:element name="setTaskVars" type="tns:setTaskVars" />
+      <xs:element name="setTaskVarsResponse" type="tns:setTaskVarsResponse" />
+      <xs:element name="start" type="tns:start" />
+      <xs:element name="startResponse" type="tns:startResponse" />
+      <xs:complexType name="getFinishTaskDetailUrl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="actInstId" type="xs:string" />
+          <xs:element minOccurs="0" name="nodeKey" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getFinishTaskDetailUrlResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="start">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="startResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getNextFlowNodes">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+          <xs:element minOccurs="0" name="account" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getNextFlowNodesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessOpinionByActInstId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="actInstId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessOpinionByActInstIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTaskFormUrl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTaskFormUrlResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTasksByAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTasksByAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBpmDefinition">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBpmDefinitionResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isAllowBack">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isAllowBackResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTaskByTaskId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTaskByTaskIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getVariablesByRunId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="runId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getVariablesByRunIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDestNodeHandleUsers">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+          <xs:element minOccurs="0" name="destNodeId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDestNodeHandleUsersResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessRun">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessRunResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTaskNode">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTaskNodeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doNext">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doNextResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessRunByTaskId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessRunByTaskIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="endProcessByTaskId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="endProcessByTaskIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getStatusByRunidNodeId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="runId" type="xs:string" />
+          <xs:element minOccurs="0" name="nodeId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getStatusByRunidNodeIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getApprovalItems">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getApprovalItemsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isSelectPath">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isSelectPathResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addSignUsers">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="signUserIds" type="xs:string" />
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addSignUsersResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getMyProcessRunByXml">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getMyProcessRunByXmlResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setTaskVars">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setTaskVarsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessOpinionByRunId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="runId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessOpinionByRunIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTaskNameByTaskId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTaskNameByTaskIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getVariablesByTaskId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getVariablesByTaskIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getFinishTask">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getFinishTaskResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isAllowAddSign">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="account" type="xs:string" />
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isAllowAddSignResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getByBusinessKey">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="businessKey" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getByBusinessKeyResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessRunByRunId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="runId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessRunByRunIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTaskOutNodes">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTaskOutNodesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="canSelectedUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="taskId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="canSelectedUserResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTasksByRunId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="runId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTasksByRunIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getFinishTaskDetailUrl">
+    <wsdl:part name="parameters" element="tns:getFinishTaskDetailUrl" />
+  </wsdl:message>
+  <wsdl:message name="getProcessRunByTaskIdResponse">
+    <wsdl:part name="parameters" element="tns:getProcessRunByTaskIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessOpinionByActInstId">
+    <wsdl:part name="parameters" element="tns:getProcessOpinionByActInstId" />
+  </wsdl:message>
+  <wsdl:message name="getVariablesByTaskIdResponse">
+    <wsdl:part name="parameters" element="tns:getVariablesByTaskIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBpmDefinitionResponse">
+    <wsdl:part name="parameters" element="tns:getBpmDefinitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTaskByTaskIdResponse">
+    <wsdl:part name="parameters" element="tns:getTaskByTaskIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBpmDefinition">
+    <wsdl:part name="parameters" element="tns:getBpmDefinition" />
+  </wsdl:message>
+  <wsdl:message name="isAllowBack">
+    <wsdl:part name="parameters" element="tns:isAllowBack" />
+  </wsdl:message>
+  <wsdl:message name="isSelectPathResponse">
+    <wsdl:part name="parameters" element="tns:isSelectPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTaskByTaskId">
+    <wsdl:part name="parameters" element="tns:getTaskByTaskId" />
+  </wsdl:message>
+  <wsdl:message name="getVariablesByRunId">
+    <wsdl:part name="parameters" element="tns:getVariablesByRunId" />
+  </wsdl:message>
+  <wsdl:message name="getStatusByRunidNodeId">
+    <wsdl:part name="parameters" element="tns:getStatusByRunidNodeId" />
+  </wsdl:message>
+  <wsdl:message name="getApprovalItems">
+    <wsdl:part name="parameters" element="tns:getApprovalItems" />
+  </wsdl:message>
+  <wsdl:message name="isSelectPath">
+    <wsdl:part name="parameters" element="tns:isSelectPath" />
+  </wsdl:message>
+  <wsdl:message name="doNextResponse">
+    <wsdl:part name="parameters" element="tns:doNextResponse" />
+  </wsdl:message>
+  <wsdl:message name="addSignUsers">
+    <wsdl:part name="parameters" element="tns:addSignUsers" />
+  </wsdl:message>
+  <wsdl:message name="endProcessByTaskIdResponse">
+    <wsdl:part name="parameters" element="tns:endProcessByTaskIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMyProcessRunByXml">
+    <wsdl:part name="parameters" element="tns:getMyProcessRunByXml" />
+  </wsdl:message>
+  <wsdl:message name="getTaskNameByTaskIdResponse">
+    <wsdl:part name="parameters" element="tns:getTaskNameByTaskIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessOpinionByRunId">
+    <wsdl:part name="parameters" element="tns:getProcessOpinionByRunId" />
+  </wsdl:message>
+  <wsdl:message name="getTaskNameByTaskId">
+    <wsdl:part name="parameters" element="tns:getTaskNameByTaskId" />
+  </wsdl:message>
+  <wsdl:message name="startResponse">
+    <wsdl:part name="parameters" element="tns:startResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVariablesByTaskId">
+    <wsdl:part name="parameters" element="tns:getVariablesByTaskId" />
+  </wsdl:message>
+  <wsdl:message name="getTasksByRunIdResponse">
+    <wsdl:part name="parameters" element="tns:getTasksByRunIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessOpinionByActInstIdResponse">
+    <wsdl:part name="parameters" element="tns:getProcessOpinionByActInstIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getByBusinessKey">
+    <wsdl:part name="parameters" element="tns:getByBusinessKey" />
+  </wsdl:message>
+  <wsdl:message name="isAllowBackResponse">
+    <wsdl:part name="parameters" element="tns:isAllowBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNextFlowNodesResponse">
+    <wsdl:part name="parameters" element="tns:getNextFlowNodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getByBusinessKeyResponse">
+    <wsdl:part name="parameters" element="tns:getByBusinessKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessRunByRunIdResponse">
+    <wsdl:part name="parameters" element="tns:getProcessRunByRunIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="canSelectedUser">
+    <wsdl:part name="parameters" element="tns:canSelectedUser" />
+  </wsdl:message>
+  <wsdl:message name="getTasksByRunId">
+    <wsdl:part name="parameters" element="tns:getTasksByRunId" />
+  </wsdl:message>
+  <wsdl:message name="getProcessRunResponse">
+    <wsdl:part name="parameters" element="tns:getProcessRunResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStatusByRunidNodeIdResponse">
+    <wsdl:part name="parameters" element="tns:getStatusByRunidNodeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="start">
+    <wsdl:part name="parameters" element="tns:start" />
+  </wsdl:message>
+  <wsdl:message name="getTaskOutNodesResponse">
+    <wsdl:part name="parameters" element="tns:getTaskOutNodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNextFlowNodes">
+    <wsdl:part name="parameters" element="tns:getNextFlowNodes" />
+  </wsdl:message>
+  <wsdl:message name="addSignUsersResponse">
+    <wsdl:part name="parameters" element="tns:addSignUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTaskFormUrl">
+    <wsdl:part name="parameters" element="tns:getTaskFormUrl" />
+  </wsdl:message>
+  <wsdl:message name="getTasksByAccount">
+    <wsdl:part name="parameters" element="tns:getTasksByAccount" />
+  </wsdl:message>
+  <wsdl:message name="getDestNodeHandleUsers">
+    <wsdl:part name="parameters" element="tns:getDestNodeHandleUsers" />
+  </wsdl:message>
+  <wsdl:message name="getProcessRun">
+    <wsdl:part name="parameters" element="tns:getProcessRun" />
+  </wsdl:message>
+  <wsdl:message name="getTaskNode">
+    <wsdl:part name="parameters" element="tns:getTaskNode" />
+  </wsdl:message>
+  <wsdl:message name="doNext">
+    <wsdl:part name="parameters" element="tns:doNext" />
+  </wsdl:message>
+  <wsdl:message name="setTaskVarsResponse">
+    <wsdl:part name="parameters" element="tns:setTaskVarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTaskNodeResponse">
+    <wsdl:part name="parameters" element="tns:getTaskNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessRunByTaskId">
+    <wsdl:part name="parameters" element="tns:getProcessRunByTaskId" />
+  </wsdl:message>
+  <wsdl:message name="endProcessByTaskId">
+    <wsdl:part name="parameters" element="tns:endProcessByTaskId" />
+  </wsdl:message>
+  <wsdl:message name="setTaskVars">
+    <wsdl:part name="parameters" element="tns:setTaskVars" />
+  </wsdl:message>
+  <wsdl:message name="getFinishTask">
+    <wsdl:part name="parameters" element="tns:getFinishTask" />
+  </wsdl:message>
+  <wsdl:message name="getProcessOpinionByRunIdResponse">
+    <wsdl:part name="parameters" element="tns:getProcessOpinionByRunIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="isAllowAddSign">
+    <wsdl:part name="parameters" element="tns:isAllowAddSign" />
+  </wsdl:message>
+  <wsdl:message name="getVariablesByRunIdResponse">
+    <wsdl:part name="parameters" element="tns:getVariablesByRunIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFinishTaskResponse">
+    <wsdl:part name="parameters" element="tns:getFinishTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="canSelectedUserResponse">
+    <wsdl:part name="parameters" element="tns:canSelectedUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessRunByRunId">
+    <wsdl:part name="parameters" element="tns:getProcessRunByRunId" />
+  </wsdl:message>
+  <wsdl:message name="getTaskOutNodes">
+    <wsdl:part name="parameters" element="tns:getTaskOutNodes" />
+  </wsdl:message>
+  <wsdl:message name="getTaskFormUrlResponse">
+    <wsdl:part name="parameters" element="tns:getTaskFormUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDestNodeHandleUsersResponse">
+    <wsdl:part name="parameters" element="tns:getDestNodeHandleUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="getApprovalItemsResponse">
+    <wsdl:part name="parameters" element="tns:getApprovalItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="isAllowAddSignResponse">
+    <wsdl:part name="parameters" element="tns:isAllowAddSignResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFinishTaskDetailUrlResponse">
+    <wsdl:part name="parameters" element="tns:getFinishTaskDetailUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTasksByAccountResponse">
+    <wsdl:part name="parameters" element="tns:getTasksByAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMyProcessRunByXmlResponse">
+    <wsdl:part name="parameters" element="tns:getMyProcessRunByXmlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ProcessService">
+    <wsdl:operation name="getFinishTaskDetailUrl">
+      <wsdl:input name="getFinishTaskDetailUrl" message="tns:getFinishTaskDetailUrl" />
+      <wsdl:output name="getFinishTaskDetailUrlResponse" message="tns:getFinishTaskDetailUrlResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="start">
+      <wsdl:input name="start" message="tns:start" />
+      <wsdl:output name="startResponse" message="tns:startResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getNextFlowNodes">
+      <wsdl:input name="getNextFlowNodes" message="tns:getNextFlowNodes" />
+      <wsdl:output name="getNextFlowNodesResponse" message="tns:getNextFlowNodesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getProcessOpinionByActInstId">
+      <wsdl:input name="getProcessOpinionByActInstId" message="tns:getProcessOpinionByActInstId" />
+      <wsdl:output name="getProcessOpinionByActInstIdResponse" message="tns:getProcessOpinionByActInstIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTaskFormUrl">
+      <wsdl:input name="getTaskFormUrl" message="tns:getTaskFormUrl" />
+      <wsdl:output name="getTaskFormUrlResponse" message="tns:getTaskFormUrlResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTasksByAccount">
+      <wsdl:input name="getTasksByAccount" message="tns:getTasksByAccount" />
+      <wsdl:output name="getTasksByAccountResponse" message="tns:getTasksByAccountResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getBpmDefinition">
+      <wsdl:input name="getBpmDefinition" message="tns:getBpmDefinition" />
+      <wsdl:output name="getBpmDefinitionResponse" message="tns:getBpmDefinitionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="isAllowBack">
+      <wsdl:input name="isAllowBack" message="tns:isAllowBack" />
+      <wsdl:output name="isAllowBackResponse" message="tns:isAllowBackResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTaskByTaskId">
+      <wsdl:input name="getTaskByTaskId" message="tns:getTaskByTaskId" />
+      <wsdl:output name="getTaskByTaskIdResponse" message="tns:getTaskByTaskIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getVariablesByRunId">
+      <wsdl:input name="getVariablesByRunId" message="tns:getVariablesByRunId" />
+      <wsdl:output name="getVariablesByRunIdResponse" message="tns:getVariablesByRunIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDestNodeHandleUsers">
+      <wsdl:input name="getDestNodeHandleUsers" message="tns:getDestNodeHandleUsers" />
+      <wsdl:output name="getDestNodeHandleUsersResponse" message="tns:getDestNodeHandleUsersResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getProcessRun">
+      <wsdl:input name="getProcessRun" message="tns:getProcessRun" />
+      <wsdl:output name="getProcessRunResponse" message="tns:getProcessRunResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTaskNode">
+      <wsdl:input name="getTaskNode" message="tns:getTaskNode" />
+      <wsdl:output name="getTaskNodeResponse" message="tns:getTaskNodeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="doNext">
+      <wsdl:input name="doNext" message="tns:doNext" />
+      <wsdl:output name="doNextResponse" message="tns:doNextResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getProcessRunByTaskId">
+      <wsdl:input name="getProcessRunByTaskId" message="tns:getProcessRunByTaskId" />
+      <wsdl:output name="getProcessRunByTaskIdResponse" message="tns:getProcessRunByTaskIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="endProcessByTaskId">
+      <wsdl:input name="endProcessByTaskId" message="tns:endProcessByTaskId" />
+      <wsdl:output name="endProcessByTaskIdResponse" message="tns:endProcessByTaskIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatusByRunidNodeId">
+      <wsdl:input name="getStatusByRunidNodeId" message="tns:getStatusByRunidNodeId" />
+      <wsdl:output name="getStatusByRunidNodeIdResponse" message="tns:getStatusByRunidNodeIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getApprovalItems">
+      <wsdl:input name="getApprovalItems" message="tns:getApprovalItems" />
+      <wsdl:output name="getApprovalItemsResponse" message="tns:getApprovalItemsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="isSelectPath">
+      <wsdl:input name="isSelectPath" message="tns:isSelectPath" />
+      <wsdl:output name="isSelectPathResponse" message="tns:isSelectPathResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addSignUsers">
+      <wsdl:input name="addSignUsers" message="tns:addSignUsers" />
+      <wsdl:output name="addSignUsersResponse" message="tns:addSignUsersResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMyProcessRunByXml">
+      <wsdl:input name="getMyProcessRunByXml" message="tns:getMyProcessRunByXml" />
+      <wsdl:output name="getMyProcessRunByXmlResponse" message="tns:getMyProcessRunByXmlResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setTaskVars">
+      <wsdl:input name="setTaskVars" message="tns:setTaskVars" />
+      <wsdl:output name="setTaskVarsResponse" message="tns:setTaskVarsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getProcessOpinionByRunId">
+      <wsdl:input name="getProcessOpinionByRunId" message="tns:getProcessOpinionByRunId" />
+      <wsdl:output name="getProcessOpinionByRunIdResponse" message="tns:getProcessOpinionByRunIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTaskNameByTaskId">
+      <wsdl:input name="getTaskNameByTaskId" message="tns:getTaskNameByTaskId" />
+      <wsdl:output name="getTaskNameByTaskIdResponse" message="tns:getTaskNameByTaskIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getVariablesByTaskId">
+      <wsdl:input name="getVariablesByTaskId" message="tns:getVariablesByTaskId" />
+      <wsdl:output name="getVariablesByTaskIdResponse" message="tns:getVariablesByTaskIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getFinishTask">
+      <wsdl:input name="getFinishTask" message="tns:getFinishTask" />
+      <wsdl:output name="getFinishTaskResponse" message="tns:getFinishTaskResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="isAllowAddSign">
+      <wsdl:input name="isAllowAddSign" message="tns:isAllowAddSign" />
+      <wsdl:output name="isAllowAddSignResponse" message="tns:isAllowAddSignResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getByBusinessKey">
+      <wsdl:input name="getByBusinessKey" message="tns:getByBusinessKey" />
+      <wsdl:output name="getByBusinessKeyResponse" message="tns:getByBusinessKeyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getProcessRunByRunId">
+      <wsdl:input name="getProcessRunByRunId" message="tns:getProcessRunByRunId" />
+      <wsdl:output name="getProcessRunByRunIdResponse" message="tns:getProcessRunByRunIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTaskOutNodes">
+      <wsdl:input name="getTaskOutNodes" message="tns:getTaskOutNodes" />
+      <wsdl:output name="getTaskOutNodesResponse" message="tns:getTaskOutNodesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="canSelectedUser">
+      <wsdl:input name="canSelectedUser" message="tns:canSelectedUser" />
+      <wsdl:output name="canSelectedUserResponse" message="tns:canSelectedUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTasksByRunId">
+      <wsdl:input name="getTasksByRunId" message="tns:getTasksByRunId" />
+      <wsdl:output name="getTasksByRunIdResponse" message="tns:getTasksByRunIdResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProcessServiceImplServiceSoapBinding" type="tns:ProcessService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="start">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="start">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="startResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFinishTaskDetailUrl">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getFinishTaskDetailUrl">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getFinishTaskDetailUrlResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNextFlowNodes">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getNextFlowNodes">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getNextFlowNodesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProcessOpinionByActInstId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getProcessOpinionByActInstId">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProcessOpinionByActInstIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTaskFormUrl">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getTaskFormUrl">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTaskFormUrlResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTasksByAccount">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getTasksByAccount">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTasksByAccountResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBpmDefinition">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getBpmDefinition">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getBpmDefinitionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isAllowBack">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="isAllowBack">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="isAllowBackResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTaskByTaskId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getTaskByTaskId">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTaskByTaskIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVariablesByRunId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getVariablesByRunId">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getVariablesByRunIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDestNodeHandleUsers">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getDestNodeHandleUsers">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDestNodeHandleUsersResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProcessRun">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getProcessRun">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProcessRunResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTaskNode">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getTaskNode">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTaskNodeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doNext">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="doNext">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="doNextResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProcessRunByTaskId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getProcessRunByTaskId">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProcessRunByTaskIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="endProcessByTaskId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="endProcessByTaskId">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="endProcessByTaskIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatusByRunidNodeId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getStatusByRunidNodeId">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getStatusByRunidNodeIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApprovalItems">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getApprovalItems">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getApprovalItemsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isSelectPath">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="isSelectPath">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="isSelectPathResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSignUsers">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="addSignUsers">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="addSignUsersResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMyProcessRunByXml">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getMyProcessRunByXml">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getMyProcessRunByXmlResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTaskVars">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="setTaskVars">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="setTaskVarsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProcessOpinionByRunId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getProcessOpinionByRunId">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProcessOpinionByRunIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTaskNameByTaskId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getTaskNameByTaskId">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTaskNameByTaskIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVariablesByTaskId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getVariablesByTaskId">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getVariablesByTaskIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFinishTask">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getFinishTask">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getFinishTaskResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isAllowAddSign">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="isAllowAddSign">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="isAllowAddSignResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getByBusinessKey">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getByBusinessKey">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getByBusinessKeyResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProcessRunByRunId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getProcessRunByRunId">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProcessRunByRunIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTaskOutNodes">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getTaskOutNodes">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTaskOutNodesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="canSelectedUser">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="canSelectedUser">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="canSelectedUserResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTasksByRunId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getTasksByRunId">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTasksByRunIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProcessServiceImplService">
+    <wsdl:port name="ProcessServiceImplPort" binding="tns:ProcessServiceImplServiceSoapBinding">
+      <soap:address location="http://192.168.1.147:8081/bpmx3/service/ProcessService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
